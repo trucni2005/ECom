@@ -41,7 +41,7 @@ public class IndexModel : PageModel
         BasketViewModel = await _basketViewModelService.GetOrCreateBasketViewModelForUserAsync(await GetUserIdAsync());
     }
 
-    public async Task<IActionResult> OnPostAsync(ProductItemViewModel productDetails)
+    public async Task<IActionResult> OnPostAsync(ProductItemViewModel productDetails, int quantity=1)
     {
         if (productDetails?.Id == null)
         {
@@ -55,7 +55,7 @@ public class IndexModel : PageModel
         }
 
         var userId = await GetUserIdAsync();
-        var basket = await _basketService.AddItemToBasketAsync(userId, productDetails.Id, 1);
+        var basket = await _basketService.AddItemToBasketAsync(userId, productDetails.Id, quantity);
         BasketViewModel = await _basketViewModelService.MapAsync(basket);
 
         return RedirectToPage();

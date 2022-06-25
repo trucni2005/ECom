@@ -10,16 +10,11 @@
                             <img class="" src="@Model.ImageUrl" alt="@Model.ImageUrl"/>
                         </a>
                         <div class="product__discount__percent">-@Model.Discount.ToString()%</div>
-                        <ul class="product__item__pic__hover">
-                            <li><a asp-action="Details" asp-route-id="@Model.Id"><i class="fa fa-shoping-cart"></i></a></li>
-                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                        </ul>
                     </div>
                     <div class="product__discount__item__text">
                         <h5><a href="#">@Model.Name</a></h5>
                         <div class="product__item__price">@Model.DPrice.ToString()đ<span>@Model.Price.ToString()đ</span></div>
-                        <input class="" type="submit" value="Thêm vào giỏ"/>
-                        
+                        <input class="" type="submit" value="Thêm vào giỏ"/>      
                     </div>
                 </div>
 </div>
