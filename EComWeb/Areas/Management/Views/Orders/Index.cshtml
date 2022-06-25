@@ -39,13 +39,12 @@
     }
     </tbody>
 </table>
-
 *@
 @model List<ECom.Models.ApplicationUser>
 
 @{
     Layout = "/Areas/Management/Views/Shared/_LayoutAdmin.cshtml";
-    ViewData["Title"]="Orders";
+    ViewData["Title"] = "Orders";
 }
 
 <section class="breadcrumb-section set-bg" data-setbg="/img/product/details/iphone13promax/apple-banner.jpg">
@@ -58,27 +57,23 @@
                 </div>
             </div>
         </div>
-    </section>
+</section>
 
-@*<br/>
+<br/>
 
 <div class="container">
-<table class="table">
+<table class="table table-striped" id="userTable">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th></th>
-        </tr>
+    <tr>
+        <th>User</th><th>Email</th><th style="width:10%">Actions</th>
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+    @foreach (var user in Model)
+    {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <div class="row">
+                <div class="row">
                     <div class="col-sm">
                         <a>
                             @user.UserName
@@ -89,11 +84,18 @@
                         </small>
                     </div>
                 </div>
+            </td>
+            <td>
+                <a>
+                    @user.Email
+                </a>
+            </td>
+            <td>
+                <a asp-controller="Orders" asp-action="GetUserOrders" asp-route-userId="@user.Id" class="dropdown-item">Manage Orders</a>
+            </td>
         </tr>
-}
+    }
     </tbody>
 </table>
-<br/>
-<a asp-action="Create" class="w-100 btn btn-lg btn-primary">Create New</a>
 </div>
-<br/>*@
+<br/>

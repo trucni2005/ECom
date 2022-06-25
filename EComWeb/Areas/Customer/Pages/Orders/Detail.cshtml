@@ -4,26 +4,97 @@
 @{
     ViewData["Title"] = "Order Detail";
 }
-<h1>@ViewData["Title"]</h1>
-
-<p>
+@*
+    <p>
     <h2>Products</h2>
     <table>
+    <tr>
+    <th>
+    Name
+    </th>
+    <th>
+    Image
+    </th>
+    <th>
+    Unit Price
+    </th>
+    <th>
+    Units
+    </th>
+    <th>
+    Total item price
+    </th>
+    </tr>
+    @foreach (var orderItem in Model.Order.OrderItems)
+    {
+    <tr>
+    <td>
+    @orderItem.ProductName
+    </td>
+    <td>
+    <img src="@orderItem.ImageUrl" alt="@orderItem.ImageUrl"/>
+    </td>
+    <td>
+    @orderItem.UnitPrice
+    </td>
+    <td>
+    @orderItem.Units
+    </td>
+    <td>
+    @orderItem.TotalPrice
+    </td>
+    </tr>
+    }
+    </table>
+    Total price: @Model.Order.TotalPrice
+    </p>
+    <p>
+    <h2>Order status</h2>
+    @foreach (var orderStatus in Model.Order.OrderStatuses)
+    {
+    <br/>
+    <span>@orderStatus.Name.ToString()</span>
+    <br/>
+    <span>Start date: @orderStatus.StartDate</span>
+    <br/>
+    @if (@orderStatus.EndDate != null)
+    {
+    <span>End date: @orderStatus.EndDate</span>
+    }
+    }
+    </p>*@
+
+<section class="breadcrumb-section set-bg" data-setbg="/img/product/details/iphone13promax/apple-banner.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb__text">
+                    <h2>@ViewData["Title"]</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br />
+
+<div class="container">
+    <table class="table">
         <tr>
             <th>
-                Name
+                Sản phẩm
             </th>
             <th>
-                Image
+                Hình ảnh
             </th>
             <th>
-                Unit Price
+                Giá tiền
             </th>
             <th>
-                Units
+                Số lượng
             </th>
             <th>
-                Total item price
+                Tổng tiền
             </th>
         </tr>
         @foreach (var orderItem in Model.Order.OrderItems)
@@ -33,34 +104,58 @@
                     @orderItem.ProductName
                 </td>
                 <td>
-                    <img src="@orderItem.ImageUrl" alt="@orderItem.ImageUrl"/>
+                    <img src="@orderItem.ImageUrl" alt="@orderItem.ImageUrl" />
                 </td>
                 <td>
-                    @orderItem.UnitPrice
+                    @orderItem.UnitPrice.ToString("N0")đ
                 </td>
                 <td>
                     @orderItem.Units
                 </td>
                 <td>
-                    @orderItem.TotalPrice
+                    @orderItem.TotalPrice.ToString("N0")đ
                 </td>
             </tr>
         }
     </table>
-    Total price: @Model.Order.TotalPrice
-</p>
-<p>
-    <h2>Order status</h2>
-    @foreach (var orderStatus in Model.Order.OrderStatuses)
-    {
-        <br/>
+    <h1>Total price: @Model.Order.TotalPrice.ToString("N0")đ</h1>
+    <section class="checkout spad">
+        <div class="container">
+            <div class="checkout__form">
+                <h4>Order status</h4>
+                <hr />
+                <div class="checkout__input">
+                    @foreach (var orderStatus in Model.Order.OrderStatuses)
+                    {
+                        <br />
+                        <span>@orderStatus.Name.ToString()</span>
+                        <br />
+                        <span>Start date: @orderStatus.StartDate</span>
+                        <br />
+                        @if (@orderStatus.EndDate != null)
+                        {
+                            <span>End date: @orderStatus.EndDate</span>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @*<p>
+        <h2>Order status</h2>
+        @foreach (var orderStatus in Model.OrderStatuses)
+        {
+        <br />
         <span>@orderStatus.Name.ToString()</span>
-        <br/>
+        <br />
         <span>Start date: @orderStatus.StartDate</span>
-        <br/>
+        <br />
         @if (@orderStatus.EndDate != null)
         {
-            <span>End date: @orderStatus.EndDate</span>
+        <span>End date: @orderStatus.EndDate</span>
         }
-    }
-</p>
+        }
+        </p>*@
+</div>
+<br />

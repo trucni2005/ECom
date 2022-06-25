@@ -69,7 +69,7 @@ public class ProductViewModelService:IProductViewModelService
             .Select(m => new SelectListItem() {Value = m.Id.ToString(), Text = m.Name})
             .OrderBy(m => m.Text)
             .ToList();
-        var allItem = new SelectListItem() {Value = null, Text = "All", Selected = true};
+        var allItem = new SelectListItem() {Value = null, Text = "Tất cả nhãn hàng", Selected = true};
         items.Insert(0,allItem);
         return items;
     }
@@ -82,7 +82,7 @@ public class ProductViewModelService:IProductViewModelService
             .Select(m => new SelectListItem() {Value = m.Id.ToString(), Text = m.Name})
             .OrderBy(m => m.Text)
             .ToList();
-        var allItem = new SelectListItem() {Value = null, Text = "All", Selected = true};
+        var allItem = new SelectListItem() {Value = null, Text = "Tất cả ngành hàng", Selected = true};
         items.Insert(0,allItem);
         return items;
     }
