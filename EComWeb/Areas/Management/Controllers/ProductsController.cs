@@ -39,7 +39,7 @@ namespace EComWeb.Areas.Management.Controllers
                 .Include(p=>p.Specification);
             return View(await result.ToListAsync());
         }
-
+        [Authorize(Roles="Admin,User")]
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
         {
