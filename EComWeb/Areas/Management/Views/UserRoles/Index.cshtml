@@ -8,7 +8,7 @@
 <h1>@ViewData["Title"]</h1>
 <div class="card">
     <div id="viewAll" class="card-body table-responsive">
-        <form asp-controller="UserRoles" method="post" asp-action="Index" asp-route-id="@Model.UserId" class="d-inline">
+        <form asp-controller="UserRoles" method="post" asp-action="Index" asp-route-id="@Model.UserId" class="">
             <input asp-for="@Model.UserId" type="hidden" />
             <input asp-for="@Model.Username" type="hidden"/>
             <select asp-for="@Model.CurrentRole" asp-items="@Model.Roles"></select>

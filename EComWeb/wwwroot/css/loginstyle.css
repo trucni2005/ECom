@@ -47,7 +47,7 @@ body {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	color: #FFF;
-	font-family: 'Quicksand', sans-serif;
+	font-family: "Nunito", sans-serif;
 	text-align: center;
 }
 
@@ -77,10 +77,11 @@ h1 {
 }
 
 .w3layoutscontaineragileits {
-    width: 30%;
-    margin: 0 auto;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 30px;
+	font-family: "Nunito", sans-serif;
+	width: 30%;
+	margin: 0 auto;
+	background: rgba(0, 0, 0, 0.5);
+	padding: 30px;
 }
 
 h2 {
@@ -91,7 +92,7 @@ h2 {
     text-transform: uppercase;
 }
 
-input[type="text"], input[type="password"], input[type="username"]{
+input[type="text"], input[type="password"], input[type="username"] {
 	width: 84%;
 	padding: 15px 10px 15px;
 	font-size: 14px;
@@ -100,7 +101,7 @@ input[type="text"], input[type="password"], input[type="username"]{
 	outline: none;
 	margin-bottom: 26px;
 	color: #fff;
-	font-family: 'Quicksand', sans-serif;
+	font-family: "Nunito", sans-serif;
 }
 
 

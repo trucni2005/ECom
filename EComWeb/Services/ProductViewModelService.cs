@@ -25,7 +25,7 @@ public class ProductViewModelService:IProductViewModelService
     public async Task<ProductIndexViewModel> GetProductItemsAsync(int pageIndex, int itemsPage, string? name, int? manufactureId, int? categoryId)
     {
         _logger.LogInformation("GetProductItems called");
-        var filteredQuery = _context.Products.GetAllAvailbleProduct().Where(p =>
+        var filteredQuery = _context.Products.GetAllAvailbleProduct().Include(p=>p.Manufacture).Where(p =>
             (!manufactureId.HasValue || p.ManufactureId == manufactureId) &&
             (!categoryId.HasValue || p.CategoryId == categoryId) && ( String.IsNullOrEmpty(name)|| p.Name.Contains(name)));
         var itemOnPage = await filteredQuery
@@ -40,7 +40,8 @@ public class ProductViewModelService:IProductViewModelService
                 ImageUrl = p.ImageUrl,
                 DPrice = Decimal.ToInt32(p.Price*(1-p.Discount)),
                 Price = Decimal.ToInt32(p.Price),
-                Discount = Decimal.ToInt32(p.Discount*100)
+                Discount = Decimal.ToInt32(p.Discount*100),
+                Category=p.CategoryId.ToString()
             }).ToList(),
             Manufactures = (await GetManufacturesAsync()).ToList(),
             Categories = (await GetCategoryAsync()).ToList(),

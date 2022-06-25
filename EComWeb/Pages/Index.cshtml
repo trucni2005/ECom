@@ -1,4 +1,5 @@
 ﻿@page
+@using EComWeb.ViewModels
 @model EComWeb.Pages.IndexModel
 @{
     Layout = null;
@@ -75,33 +76,17 @@
                         @*<div class="hero__categories__all">
                             <i class="fa fa-bars"></i>
                             <span>Tất cả ngành hàng</span>
-                        </div>*@
+                            </div>*@
                         @*<ul>
                             <li><a href="#">Điện thoại</a></li>
                             <li><a href="#">Sạc, cáp</a></li>
                             <li><a href="#">Tai nghe</a></li>
                             <li><a href="#">Ốp lưng điện thoại</a></li>
                             <li><a href="#">Khác</a></li>
-                        </ul>*@
+                            </ul>*@
                         <div class="hero__categories__all">
                             <i class="fa fa-bars"></i>
-                            <span>Tất cả nhãn hàng</span>
-                        </div>
-                        @*<ul>
-                            <li><a href="#">Điện thoại</a></li>
-                            <li><a href="#">Sạc, cáp</a></li>
-                            <li><a href="#">Tai nghe</a></li>
-                            <li><a href="#">Ốp lưng điện thoại</a></li>
-                            <li><a href="#">Khác</a></li>
-                        </ul>*@
-                        
-                    </div>
-                </div>
-                @*<div class="col-lg-3">
-                    <div class="hero__categories">
-                        <div class="hero__categories__all">
-                            <i class="fa fa-bars"></i>
-                            <span>Tất cả nhãn hàng</span>
+                            <span>Tất cả ngành hàng</span>
                         </div>
                         <ul>
                             <li><a href="#">Điện thoại</a></li>
@@ -109,9 +94,30 @@
                             <li><a href="#">Tai nghe</a></li>
                             <li><a href="#">Ốp lưng điện thoại</a></li>
                             <li><a href="#">Khác</a></li>
+                            @*<li><select asp-for="@Model.ProductIndexViewModel.ManufactureFilterApplied" asp-items="@Model.ProductIndexViewModel.Manufactures"></select></li>
+                            <li><select asp-items="@Model.ProductIndexViewModel.Categories" asp-items="@Model.ProductIndexViewModel.Categories" class="esh-catalog-filter"></select></li>*@
+                            @*<li><a href="#">Tai nghe</a></li>
+                                <li><a href="#">Ốp lưng điện thoại</a></li>
+                                <li><a href="#">Khác</a></li>*@
                         </ul>
+
                     </div>
-                </div>*@
+                </div>
+                @*<div class="col-lg-3">
+                    <div class="hero__categories">
+                    <div class="hero__categories__all">
+                    <i class="fa fa-bars"></i>
+                    <span>Tất cả nhãn hàng</span>
+                    </div>
+                    <ul>
+                    <li><a href="#">Điện thoại</a></li>
+                    <li><a href="#">Sạc, cáp</a></li>
+                    <li><a href="#">Tai nghe</a></li>
+                    <li><a href="#">Ốp lưng điện thoại</a></li>
+                    <li><a href="#">Khác</a></li>
+                    </ul>
+                    </div>
+                    </div>*@
                 <div class="col-lg-9">
                     <div class="hero__search">
                         <div class="hero__search__form">
@@ -120,18 +126,18 @@
                                     Tất cả sản phẩm
                                     <span class="arrow_carrot-down"></span>
 @*                                    <ul>
-                                        <li><select asp-for="@Model.ProductIndexViewModel.ManufactureFilterApplied" asp-items="@Model.ProductIndexViewModel.Manufactures"></select></li>
-                                        <li><select asp-for="@Model.ProductIndexViewModel.CategoryFilterApplied" asp-items="@Model.ProductIndexViewModel.Categories" class="esh-catalog-filter"></select></li>
-@*                                        <li><a href="#">Tai nghe</a></li>
-                                        <li><a href="#">Ốp lưng điện thoại</a></li>
-                                        <li><a href="#">Khác</a></li>
+                                        <li><a asp-items="@Model.ProductIndexViewModel.Manufactures"></a></li>
+                                        <li><a asp-items="@Model.ProductIndexViewModel.Categories" class="esh-catalog-filter"></a></li>
+                                        @<li><a href="#">Tai nghe</a></li>
+                                            <li><a href="#">Ốp lưng điện thoại</a></li>
+                                            <li><a href="#">Khác</a></li>
                                     </ul>*@
                                 </div>
                                 @*                                <form method="get">*@
                                 @*<select asp-for="@Model.ProductIndexViewModel.ManufactureFilterApplied" asp-items="@Model.ProductIndexViewModel.Manufactures"></select>
-                                <select asp-for="@Model.ProductIndexViewModel.CategoryFilterApplied" asp-items="@Model.ProductIndexViewModel.Categories" class="esh-catalog-filter"></select>*@
-                                <select asp-for="@Model.ProductIndexViewModel.ManufactureFilterApplied" asp-items="@Model.ProductIndexViewModel.Manufactures" class="esh-catalog-filter"></select>
-                                <select asp-for="@Model.ProductIndexViewModel.CategoryFilterApplied" asp-items="@Model.ProductIndexViewModel.Categories" class="esh-catalog-filter"></select>
+                                    <select asp-for="@Model.ProductIndexViewModel.CategoryFilterApplied" asp-items="@Model.ProductIndexViewModel.Categories" class="esh-catalog-filter"></select>*@
+                                @* <select asp-for="@Model.ProductIndexViewModel.ManufactureFilterApplied" asp-items="@Model.ProductIndexViewModel.Manufactures" class="esh-catalog-filter"></select>
+                                    <select asp-for="@Model.ProductIndexViewModel.CategoryFilterApplied" asp-items="@Model.ProductIndexViewModel.Categories" class="esh-catalog-filter"></select>*@
                                 <input asp-for="@Model.ProductIndexViewModel.NameFilterApplied" type="text" placeholder="Bạn muốn tìm kiếm sản phẩm gì?"></input>
                                 <button type="submit" class="site-btn">TÌM KIẾM</button>
                                 @*                                </form> *@
@@ -207,12 +213,16 @@
                         </div>
                         <div class="featured__controls">
                             <ul>
-                                <li data-filter=".all">Tất cả ngành hàng</li>
-                                <li data-filter=".dienthoai">Điện thoại</li>
-                                <li data-filter=".saccap">Sạc, cáp</li>
-                                <li data-filter=".tainghe">Tai nghe</li>
-                                <li data-filter=".oplung">Ốp lưng điện thoại</li>
-                                <li data-filter=".khac">Giá đỡ điện thoại, túi chống nước, móc điện thoại</li>
+                                <div class="featured__controls">
+                        <ul>
+                            <li data-filter=".all">Tất cả ngành hàng</li>
+                            <li data-filter=".dt">Điện thoại</li>
+                            <li data-filter=".sc">Sạc, cáp</li>
+                            <li data-filter=".tn">Tai nghe</li>
+                            <li data-filter=".ol">Ốp lưng điện thoại</li>
+                            <li data-filter=".khac">Giá đỡ điện thoại, túi chống nước, móc điện thoại</li>
+                        </ul>
+                    </div>
                             </ul>
                         </div>
                     </div>
@@ -223,9 +233,10 @@
                         <div class="esh-catalog-items row">
                             @foreach (var productItem in Model.ProductIndexViewModel.ProductItems)
                             {
-                                <div class="esh-catalog-items col-md-4">
+                                
+                                <div class="col-lg-3 col-md-4 col-sm-6 dt mix all">
                                     <partial name="Shared/_product" for="@productItem" />
-                                </div>
+                                 </div>
                             }
                         </div>
                         <div class="container">

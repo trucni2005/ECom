@@ -13,5 +13,6 @@ namespace EComWeb.ViewModels
         public int Price {get; set;}
         public int DPrice { get; set;}
         public int Discount { get; set; }
+        public string Category { get; set; }
     }
 }
