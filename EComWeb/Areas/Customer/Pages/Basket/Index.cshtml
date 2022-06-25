@@ -4,6 +4,7 @@
 @model EComWeb.Areas.Customer.Pages.Basket.IndexModel
 
 @{
+
     ViewData["Title"] = "Basket";
     var items = new List<BasketItemViewModel>();
     foreach (var VARIABLE in Model.BasketViewModel.Items)
@@ -11,6 +12,20 @@
         items.Add(VARIABLE);
     }
 }
+<section class="breadcrumb-section set-bg" data-setbg="/img/product/details/iphone13promax/apple-banner.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>GIỎ HÀNG CỦA BẠN</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<br/>
+
 <section class="shoping-cart spad">
     <form method="post">
         <div class="container">
