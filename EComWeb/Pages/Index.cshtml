@@ -5,240 +5,68 @@
 }
 <section class="esh-catalog-hero">
     <div class="container">
+        
     </div>
 </section>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="MobileWorld Template">
-    <meta name="keywords" content="MobileWorld, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>MobileWorld</title>
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;900&display=swap" rel="stylesheet">
-
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="/css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
-</head>
-<header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <div class="container-fluid">
-            <a class="navbar-brand" asp-area="" asp-page="/Index">MobileWorld</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-page="/Index">Trang chủ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Bảo mật</a>
-                    </li>
-                    @if (User.IsInRole("Admin"))
-                    {
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Management" asp-page="/Admin">Admin</a>
-                        </li>
-                    }
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <a class="nav-link text-dark" asp-area="Customer" asp-page="/Basket/Index">Giỏ hàng</a>
-                    }
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <a class="nav-link text-dark" asp-area="Customer" asp-page="/Orders/Index">Đơn hàng của bạn</a>
-                    }
-                </ul>
-                <partial name="_LoginPartial" />
-            </div>
-        </div>
-    </nav>
-</header>
-<body>
-    <div class="humberger__menu__overlay"></div>
-    <section class="hero">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="hero__categories">
-                        <div class="hero__categories__all">
-                            <i class="fa fa-bars"></i>
-                            <span>Tất cả ngành hàng</span>
-                        </div>
-                        <ul>
-                            <li><a href="#">Điện thoại</a></li>
-                            <li><a href="#">Sạc, cáp</a></li>
-                            <li><a href="#">Tai nghe</a></li>
-                            <li><a href="#">Ốp lưng điện thoại</a></li>
-                            <li><a href="#">Khác</a></li>
-                        </ul>
-                        <div class="hero__categories__all">
-                            <i class="fa fa-bars"></i>
-                            <span>Tất cả nhãn hàng</span>
-                        </div>
-                        <ul>
-                            <li><a href="#">Điện thoại</a></li>
-                            <li><a href="#">Sạc, cáp</a></li>
-                            <li><a href="#">Tai nghe</a></li>
-                            <li><a href="#">Ốp lưng điện thoại</a></li>
-                            <li><a href="#">Khác</a></li>
-                        </ul>
-                    </div>
-                </div>
-                @*<div class="col-lg-3">
-                    <div class="hero__categories">
-                        <div class="hero__categories__all">
-                            <i class="fa fa-bars"></i>
-                            <span>Tất cả nhãn hàng</span>
-                        </div>
-                        <ul>
-                            <li><a href="#">Điện thoại</a></li>
-                            <li><a href="#">Sạc, cáp</a></li>
-                            <li><a href="#">Tai nghe</a></li>
-                            <li><a href="#">Ốp lưng điện thoại</a></li>
-                            <li><a href="#">Khác</a></li>
-                        </ul>
-                    </div>
-                </div>*@
-                <div class="col-lg-9">
-                    <div class="hero__search">
-                        <div class="hero__search__form">
-                            <form action="#">
-                                <div class="hero__search__categories">
-                                    Tất cả sản phẩm
-                                    <span class="arrow_carrot-down"></span>
-@*                                    <ul>
-                                        <li><select asp-for="@Model.ProductIndexViewModel.ManufactureFilterApplied" asp-items="@Model.ProductIndexViewModel.Manufactures"></select></li>
-                                        <li><select asp-for="@Model.ProductIndexViewModel.CategoryFilterApplied" asp-items="@Model.ProductIndexViewModel.Categories" class="esh-catalog-filter"></select></li>
-@*                                        <li><a href="#">Tai nghe</a></li>
-                                        <li><a href="#">Ốp lưng điện thoại</a></li>
-                                        <li><a href="#">Khác</a></li>
-                                    </ul>*@
-                                </div>
-                                @*                                <form method="get">*@
-                                @*<select asp-for="@Model.ProductIndexViewModel.ManufactureFilterApplied" asp-items="@Model.ProductIndexViewModel.Manufactures"></select>
-                                <select asp-for="@Model.ProductIndexViewModel.CategoryFilterApplied" asp-items="@Model.ProductIndexViewModel.Categories" class="esh-catalog-filter"></select>*@
-                                <input asp-for="@Model.ProductIndexViewModel.NameFilterApplied" type="text" placeholder="Bạn muốn tìm kiếm sản phẩm gì?"></input>
-                                <button type="submit" class="site-btn">TÌM KIẾM</button>
-                                @*                                </form> *@
-                            </form>
-                        </div>
-                        <div class="hero__search__phone">
-                            <div class="hero__search__phone__icon">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <div class="hero__search__phone__text">
-                                <h5>+84 334 840 864</h5>
-                                <span>Hỗ trợ 24/7</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hero__item set-bg" data-setbg="/img/banner/banner_3.jpg"
-                    </div>
-                </div>
-            </div>
-            @*<form method="get">
-                <select asp-for="@Model.ProductIndexViewModel.ManufactureFilterApplied" asp-items="@Model.ProductIndexViewModel.Manufactures"></select>
+@*<section class="esh-catalog-filters">
+    <div class="container">
+        <form method="get">
+            <label class="esh-catalog-label" data-title="Name">
+                <input asp-for="@Model.ProductIndexViewModel.NameFilterApplied" class="esh-catalog-filter"></input>
+            </label>
+            <label class="esh-catalog-label" data-title="Manufacture">
+                <select asp-for="@Model.ProductIndexViewModel.ManufactureFilterApplied" asp-items="@Model.ProductIndexViewModel.Manufactures" class="esh-catalog-filter"></select>
+            </label>
+            <label class="esh-catalog-label" data-title="Category">
                 <select asp-for="@Model.ProductIndexViewModel.CategoryFilterApplied" asp-items="@Model.ProductIndexViewModel.Categories" class="esh-catalog-filter"></select>
-                <input asp-for="@Model.ProductIndexViewModel.NameFilterApplied" type="text" placeholder="Bạn muốn tìm kiếm sản phẩm gì?"></input>
-                <button type="submit" class="site-btn">TÌM KIẾM</button>
-                </form>*@
+            </label>
+            <input class="esh-catalog-send" type="image" src="~/images/arrow-right.svg"/>
+        </form>
+    </div>
+</section>*@
+<section class="featured spad">
+<div class="container">
+    <div class="row">
+                        <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>TẤT CẢ NGÀNH HÀNG</h2>
+                    </div>
+                    <div class="featured__controls">
+                        <ul>
+                            <li data-filter=".all">Tất cả ngành hàng</li>
+                            <li data-filter=".dienthoai">Điện thoại</li>
+                            <li data-filter=".saccap">Sạc, cáp</li>
+                            <li data-filter=".tainghe">Tai nghe</li>
+                            <li data-filter=".oplung">Ốp lưng điện thoại</li>
+                            <li data-filter=".khac">Giá đỡ điện thoại, túi chống nước, móc điện thoại</li>
+                        </ul>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="row featured__filter">
+    @if (Model.ProductIndexViewModel.ProductItems.Any())
+    {
+        <div class="esh-catalog-items row">
+            @foreach (var productItem in Model.ProductIndexViewModel.ProductItems)
+            {
+                <div class="esh-catalog-items col-md-4">
+                    <partial name="Shared/_product" for="@productItem"/>
+                </div>
+            }
         </div>
-    </section>
-    <section class="categories">
         <div class="container">
-            <div class="row">
-                <div class="categories__slider owl-carousel">
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="/img/categories/dienthoai_1.jpg">
-                            <h5><a href="#">ĐIỆN THOẠI</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="/img/categories/phukien.jpg">
-                            <h5><a href="#">SẠC, CÁP</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="/img/categories/amthanh.jpg">
-                            <h5><a href="#">TAI NGHE</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="/img/categories/oplung.jpg">
-                            <h5><a href="#">ỐP LƯNG ĐIỆN THOẠI</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="/img/categories/khac.jpg">
-                            <h5><a href="#">KHÁC</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="/img/categories/tintuc.jpg">
-                            <h5><a href="#">TIN TỨC</a></h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <partial name="Shared/_pagination" for="@Model.ProductIndexViewModel.PaginationInfo"/></div>
+    }
+    else
+    {
+        <div class="esh-catalog-items row">
+            THERE ARE NO RESULTS THAT MATCH YOUR SEARCH
         </div>
+    }
+    <h1></h1>
+    </div>
+    </div>
     </section>
-    <main role="main" class="pb-3">
-        <section class="featured spad">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-title">
-                            <h2>TẤT CẢ NGÀNH HÀNG</h2>
-                        </div>
-                        <div class="featured__controls">
-                            <ul>
-                                <li data-filter=".all">Tất cả ngành hàng</li>
-                                <li data-filter=".dienthoai">Điện thoại</li>
-                                <li data-filter=".saccap">Sạc, cáp</li>
-                                <li data-filter=".tainghe">Tai nghe</li>
-                                <li data-filter=".oplung">Ốp lưng điện thoại</li>
-                                <li data-filter=".khac">Giá đỡ điện thoại, túi chống nước, móc điện thoại</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="row featured__filter">
-                    @if (Model.ProductIndexViewModel.ProductItems.Any())
-                    {
-                        <div class="esh-catalog-items row">
-                            @foreach (var productItem in Model.ProductIndexViewModel.ProductItems)
-                            {
-                                <div class="esh-catalog-items col-md-4">
-                                    <partial name="Shared/_product" for="@productItem" />
-                                </div>
-                            }
-                        </div>
-                        <div class="container">
-                            <partial name="Shared/_pagination" for="@Model.ProductIndexViewModel.PaginationInfo" />
-                        </div>
-                    }
-                    else
-                    {
-                        <div class="esh-catalog-items row">
-                            THERE ARE NO RESULTS THAT MATCH YOUR SEARCH
-                        </div>
-                    }
-                    <h1></h1>
-                </div>
-            </div>
-        </section>
 
         <section class="from-blog spad">
             <div class="container">
