@@ -175,8 +175,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Customer\Pages\Shared" />
-    <Folder Include="Areas\Identity\Pages\NewFolder\" />
     <Folder Include="Controllers" />
     <Folder Include="wwwroot\img\featured\" />
   </ItemGroup>
