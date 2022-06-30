@@ -172,12 +172,11 @@
     <UpToDateCheckInput Remove="Areas\Management\Views\Specifications\Details.cshtml" />
     <UpToDateCheckInput Remove="Areas\Management\Views\Specifications\Edit.cshtml" />
     <UpToDateCheckInput Remove="Areas\Management\Views\Specifications\Index.cshtml" />
+    <UpToDateCheckInput Remove="Views\Home\Index.cshtml" />
+    <UpToDateCheckInput Remove="Views\Home\Privacy.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Customer\Pages\Shared" />
-    <Folder Include="Areas\Identity\Pages\NewFolder\" />
-    <Folder Include="Controllers" />
     <Folder Include="wwwroot\img\featured\" />
   </ItemGroup>
 

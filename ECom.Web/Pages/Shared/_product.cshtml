@@ -5,7 +5,7 @@
 <div class="product__discount__item__text">
     <div class="product__discount__item">
                     <div class="product__discount__item__pic set-bg">
-                        <a asp-area="Management" asp-controller="Products" asp-action="Details" asp-route-id="@Model.Id">
+                        <a asp-area="Customer" asp-page="/Products/Detail" asp-route-id="@Model.Id">   
                             <img class="" src="@Model.ImageUrl" alt="@Model.ImageUrl"/>
                         </a>
                         <div class="product__discount__percent">-@Model.Discount.ToString()%</div>
