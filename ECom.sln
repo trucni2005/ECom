@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EComWeb", "EComWeb\EComWeb.csproj", "{BE69A125-C0BB-4922-9E17-70FC957B9C6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECom.Web", "ECom.Web\ECom.Web.csproj", "{BE69A125-C0BB-4922-9E17-70FC957B9C6F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECom.Models", "ECom.Models\ECom.Models.csproj", "{91C84A6A-C5E2-4F9F-B1A7-1C8979F6036B}"
 EndProject
